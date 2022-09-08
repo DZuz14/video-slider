@@ -16,16 +16,14 @@ const slides = [
   { type: 'video', url: 'abstract.mp4' },
 ];
 
+export const DEFAULT_AUTO_PLAY_TIME = 3;
+
 function App() {
   const [index, setIndex] = useState(0);
   const [translate, setTranslate] = useState(0);
-  const [autoPlay] = useState(3);
+  const [autoPlay, setAutoPlay] = useState(DEFAULT_AUTO_PLAY_TIME);
 
   const autoPlayRef = useRef();
-
-  useEffect(() => {
-    autoPlayRef.current = moveRight;
-  });
 
   const moveRight = () => {
     if (index === slides.length - 1) {
@@ -45,6 +43,10 @@ function App() {
       setTranslate((prev) => prev + window.innerWidth);
     }
   };
+
+  useEffect(() => {
+    autoPlayRef.current = moveRight;
+  });
 
   useEffect(() => {
     const play = () => {
@@ -74,6 +76,7 @@ function App() {
                   key={slide.url}
                   url={slide.url}
                   isVisible={i === index}
+                  setAutoPlay={setAutoPlay}
                 />
               );
             } else {
