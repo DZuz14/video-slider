@@ -48,7 +48,6 @@ function App() {
 
   useEffect(() => {
     const play = () => {
-      console.log('oky');
       autoPlayRef.current();
     };
 
