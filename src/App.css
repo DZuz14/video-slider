@@ -1,17 +1,16 @@
 .slider {
   position: relative;
-  height: 400px;
-  width: 600px;
+  height: 100vh;
+  width: 100vw;
   margin: 0 auto;
   overflow: hidden;
   white-space: nowrap;
   background: #ddd;
-  margin-top: 60px;
 }
 
 .slider-inner {
   height: 100%;
-  transition: transform 0.45s ease;
+  transition: transform 0.45s ease-in;
 }
 
 .arrow {
@@ -51,9 +50,15 @@
 
 .slide {
   height: 100%;
-  width: 600px;
+  width: 100%;
   display: inline-block;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
